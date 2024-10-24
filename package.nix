@@ -3,7 +3,7 @@
   lib,
   makeWrapper,
   rofi-wayland,
-  swaylock-effects,
+  hyprlock,
 }:
 ############
 # Packages #
@@ -50,7 +50,7 @@ stdenv.mkDerivation (finalAttrs: {
   # ----------------------------------------------------------------- #
   postFixup = ''
     wrapProgram $out/bin/${finalAttrs.pname} \
-      --prefix PATH : ${lib.makeBinPath [ rofi-wayland swaylock-effects ]}
+      --prefix PATH : ${lib.makeBinPath [ rofi-wayland hyprlock ]}
   '';
   # ----------------------------------------------------------------- #
   meta = {
